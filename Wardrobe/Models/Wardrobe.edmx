@@ -29,6 +29,13 @@
           <Property Name="BottomOccasion" Type="nvarchar" MaxLength="50" />
           <Property Name="TypeID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ClothingType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Shoe">
           <Key>
             <PropertyRef Name="ShoeID" />
@@ -53,18 +60,11 @@
           <Property Name="TopOccasion" Type="nvarchar" MaxLength="50" />
           <Property Name="TypeID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Type">
-          <Key>
-            <PropertyRef Name="TypeID" />
-          </Key>
-          <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Accessory_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Accessory" Type="Self.Accessory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Accessory">
@@ -73,10 +73,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bottom_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Bottom" Type="Self.Bottom" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Bottom">
@@ -85,10 +85,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Shoe_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Shoe" Type="Self.Shoe" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Shoe">
@@ -97,10 +97,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Top_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Top" Type="Self.Top" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Top">
@@ -111,23 +111,23 @@
         <EntityContainer Name="WardrobeModelStoreContainer">
           <EntitySet Name="Accessory" EntityType="Self.Accessory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bottom" EntityType="Self.Bottom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClothingType" EntityType="Self.ClothingType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shoe" EntityType="Self.Shoe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Top" EntityType="Self.Top" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Accessory_Type" Association="Self.FK_Accessory_Type">
-            <End Role="Type" EntitySet="Type" />
+            <End Role="ClothingType" EntitySet="ClothingType" />
             <End Role="Accessory" EntitySet="Accessory" />
           </AssociationSet>
           <AssociationSet Name="FK_Bottom_Type" Association="Self.FK_Bottom_Type">
-            <End Role="Type" EntitySet="Type" />
+            <End Role="ClothingType" EntitySet="ClothingType" />
             <End Role="Bottom" EntitySet="Bottom" />
           </AssociationSet>
           <AssociationSet Name="FK_Shoe_Type" Association="Self.FK_Shoe_Type">
-            <End Role="Type" EntitySet="Type" />
+            <End Role="ClothingType" EntitySet="ClothingType" />
             <End Role="Shoe" EntitySet="Shoe" />
           </AssociationSet>
           <AssociationSet Name="FK_Top_Type" Association="Self.FK_Top_Type">
-            <End Role="Type" EntitySet="Type" />
+            <End Role="ClothingType" EntitySet="ClothingType" />
             <End Role="Top" EntitySet="Top" />
           </AssociationSet>
         </EntityContainer>
@@ -147,7 +147,7 @@
           <Property Name="AccessorySeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AccessoryOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Type" Relationship="Self.FK_Accessory_Type" FromRole="Accessory" ToRole="Type" />
+          <NavigationProperty Name="ClothingType" Relationship="Self.FK_Accessory_Type" FromRole="Accessory" ToRole="ClothingType" />
         </EntityType>
         <EntityType Name="Bottom">
           <Key>
@@ -160,7 +160,18 @@
           <Property Name="BottomSeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BottomOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Type" Relationship="Self.FK_Bottom_Type" FromRole="Bottom" ToRole="Type" />
+          <NavigationProperty Name="ClothingType" Relationship="Self.FK_Bottom_Type" FromRole="Bottom" ToRole="ClothingType" />
+        </EntityType>
+        <EntityType Name="ClothingType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Accessories" Relationship="Self.FK_Accessory_Type" FromRole="ClothingType" ToRole="Accessory" />
+          <NavigationProperty Name="Bottoms" Relationship="Self.FK_Bottom_Type" FromRole="ClothingType" ToRole="Bottom" />
+          <NavigationProperty Name="Shoes" Relationship="Self.FK_Shoe_Type" FromRole="ClothingType" ToRole="Shoe" />
+          <NavigationProperty Name="Tops" Relationship="Self.FK_Top_Type" FromRole="ClothingType" ToRole="Top" />
         </EntityType>
         <EntityType Name="Shoe">
           <Key>
@@ -173,7 +184,7 @@
           <Property Name="ShoeSeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ShoeOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Type" Relationship="Self.FK_Shoe_Type" FromRole="Shoe" ToRole="Type" />
+          <NavigationProperty Name="ClothingType" Relationship="Self.FK_Shoe_Type" FromRole="Shoe" ToRole="ClothingType" />
         </EntityType>
         <EntityType Name="Top">
           <Key>
@@ -186,24 +197,13 @@
           <Property Name="TopSeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TopOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Type" Relationship="Self.FK_Top_Type" FromRole="Top" ToRole="Type" />
-        </EntityType>
-        <EntityType Name="Type">
-          <Key>
-            <PropertyRef Name="TypeID" />
-          </Key>
-          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Accessories" Relationship="Self.FK_Accessory_Type" FromRole="Type" ToRole="Accessory" />
-          <NavigationProperty Name="Bottoms" Relationship="Self.FK_Bottom_Type" FromRole="Type" ToRole="Bottom" />
-          <NavigationProperty Name="Shoes" Relationship="Self.FK_Shoe_Type" FromRole="Type" ToRole="Shoe" />
-          <NavigationProperty Name="Tops" Relationship="Self.FK_Top_Type" FromRole="Type" ToRole="Top" />
+          <NavigationProperty Name="ClothingType" Relationship="Self.FK_Top_Type" FromRole="Top" ToRole="ClothingType" />
         </EntityType>
         <Association Name="FK_Accessory_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Accessory" Type="Self.Accessory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Accessory">
@@ -212,10 +212,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bottom_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Bottom" Type="Self.Bottom" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Bottom">
@@ -224,10 +224,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Shoe_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Shoe" Type="Self.Shoe" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Shoe">
@@ -236,10 +236,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Top_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="ClothingType" Type="Self.ClothingType" Multiplicity="1" />
           <End Role="Top" Type="Self.Top" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type">
+            <Principal Role="ClothingType">
               <PropertyRef Name="TypeID" />
             </Principal>
             <Dependent Role="Top">
@@ -250,23 +250,23 @@
         <EntityContainer Name="WardrobeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accessories" EntityType="Self.Accessory" />
           <EntitySet Name="Bottoms" EntityType="Self.Bottom" />
+          <EntitySet Name="ClothingTypes" EntityType="Self.ClothingType" />
           <EntitySet Name="Shoes" EntityType="Self.Shoe" />
           <EntitySet Name="Tops" EntityType="Self.Top" />
-          <EntitySet Name="Types" EntityType="Self.Type" />
           <AssociationSet Name="FK_Accessory_Type" Association="Self.FK_Accessory_Type">
-            <End Role="Type" EntitySet="Types" />
+            <End Role="ClothingType" EntitySet="ClothingTypes" />
             <End Role="Accessory" EntitySet="Accessories" />
           </AssociationSet>
           <AssociationSet Name="FK_Bottom_Type" Association="Self.FK_Bottom_Type">
-            <End Role="Type" EntitySet="Types" />
+            <End Role="ClothingType" EntitySet="ClothingTypes" />
             <End Role="Bottom" EntitySet="Bottoms" />
           </AssociationSet>
           <AssociationSet Name="FK_Shoe_Type" Association="Self.FK_Shoe_Type">
-            <End Role="Type" EntitySet="Types" />
+            <End Role="ClothingType" EntitySet="ClothingTypes" />
             <End Role="Shoe" EntitySet="Shoes" />
           </AssociationSet>
           <AssociationSet Name="FK_Top_Type" Association="Self.FK_Top_Type">
-            <End Role="Type" EntitySet="Types" />
+            <End Role="ClothingType" EntitySet="ClothingTypes" />
             <End Role="Top" EntitySet="Tops" />
           </AssociationSet>
         </EntityContainer>
@@ -302,6 +302,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ClothingTypes">
+            <EntityTypeMapping TypeName="WardrobeModel.ClothingType">
+              <MappingFragment StoreEntitySet="ClothingType">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Shoes">
             <EntityTypeMapping TypeName="WardrobeModel.Shoe">
               <MappingFragment StoreEntitySet="Shoe">
@@ -325,14 +333,6 @@
                 <ScalarProperty Name="TopSeason" ColumnName="TopSeason" />
                 <ScalarProperty Name="TopOccasion" ColumnName="TopOccasion" />
                 <ScalarProperty Name="TypeID" ColumnName="TypeID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Types">
-            <EntityTypeMapping TypeName="WardrobeModel.Type">
-              <MappingFragment StoreEntitySet="Type">
-                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
-                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

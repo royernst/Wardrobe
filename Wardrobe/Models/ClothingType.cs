@@ -12,10 +12,10 @@ namespace Wardrobe.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Type
+    public partial class ClothingType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Type()
+        public ClothingType()
         {
             this.Accessories = new HashSet<Accessory>();
             this.Bottoms = new HashSet<Bottom>();

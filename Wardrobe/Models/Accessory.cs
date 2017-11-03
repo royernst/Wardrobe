@@ -22,6 +22,6 @@ namespace Wardrobe.Models
         public string AccessoryOccasion { get; set; }
         public int TypeID { get; set; }
     
-        public virtual Type Type { get; set; }
+        public virtual ClothingType ClothingType { get; set; }
     }
 }

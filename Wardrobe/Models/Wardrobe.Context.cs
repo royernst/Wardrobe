@@ -27,8 +27,8 @@ namespace Wardrobe.Models
     
         public virtual DbSet<Accessory> Accessories { get; set; }
         public virtual DbSet<Bottom> Bottoms { get; set; }
+        public virtual DbSet<ClothingType> ClothingTypes { get; set; }
         public virtual DbSet<Shoe> Shoes { get; set; }
         public virtual DbSet<Top> Tops { get; set; }
-        public virtual DbSet<Type> Types { get; set; }
     }
 }

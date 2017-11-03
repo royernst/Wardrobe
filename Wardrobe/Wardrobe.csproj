@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E8B916C0-D671-46B5-9284-24D29F2F81F3}</ProjectGuid>
+    <ProjectGuid>{29A0E366-07F6-4CA3-94F1-BD6A1160D816}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -48,6 +48,14 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -60,6 +68,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -123,6 +133,36 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Accessory.cs">
+      <DependentUpon>Wardrobe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bottom.cs">
+      <DependentUpon>Wardrobe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClothingType.cs">
+      <DependentUpon>Wardrobe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shoe.cs">
+      <DependentUpon>Wardrobe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Top.cs">
+      <DependentUpon>Wardrobe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wardrobe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wardrobe.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wardrobe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wardrobe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wardrobe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wardrobe.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +174,23 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Wardrobe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Wardrobe.edmx</DependentUpon>
+      <LastGenOutput>Wardrobe.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Wardrobe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Wardrobe.edmx</DependentUpon>
+      <LastGenOutput>Wardrobe.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\Wardrobe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Wardrobe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Wardrobe.edmx.diagram">
+      <DependentUpon>Wardrobe.edmx</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -177,13 +234,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -201,7 +260,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52081</DevelopmentServerPort>
+          <DevelopmentServerPort>52229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52081/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
