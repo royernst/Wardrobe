@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="319d5e36a7b34e62a99198465c459275" Name="Diagram1">
+        <EntityTypeShape EntityType="WardrobeModel.Accessory" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WardrobeModel.Bottom" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WardrobeModel.Shoe" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WardrobeModel.Top" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WardrobeModel.Type" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="WardrobeModel.FK_Accessory_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="WardrobeModel.FK_Bottom_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="WardrobeModel.FK_Shoe_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="WardrobeModel.FK_Top_Type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
