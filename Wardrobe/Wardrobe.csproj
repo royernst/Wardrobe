@@ -177,7 +177,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\accessories-category.jpeg" />
     <Content Include="Content\Images\bottoms-category.jpeg" />
+    <Content Include="Content\Images\coolwatch.jpeg" />
     <Content Include="Content\Images\jumbotronimage.jpg" />
+    <Content Include="Content\Images\lamewatch.jpeg" />
     <Content Include="Content\Images\shoes-category.jpeg" />
     <Content Include="Content\Images\tops-category.jpeg" />
     <Content Include="Content\Images\woodbg.jpg" />
