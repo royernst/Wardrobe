@@ -24,6 +24,7 @@ namespace Wardrobe.Models
         public string ShoeColor { get; set; }
         [Display(Name = "Season")]
         public string ShoeSeason { get; set; }
+        [Display(Name = "Occasion")]
         public string ShoeOccasion { get; set; }
         public int TypeID { get; set; }
     

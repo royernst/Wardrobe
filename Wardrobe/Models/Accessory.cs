@@ -24,6 +24,7 @@ namespace Wardrobe.Models
         public string AccessoryColor { get; set; }
         [Display(Name = "Season")]
         public string AccessorySeason { get; set; }
+        [Display(Name = "Occasion")]
         public string AccessoryOccasion { get; set; }
         public int TypeID { get; set; }
     
