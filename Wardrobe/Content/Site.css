@@ -1,12 +1,13 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('Images/woodbg.jpg');
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px 15px 15px 15px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,97 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.navbar-brand {
+    text-align: left;
+    font-family: 'Cinzel', serif;
+}
+.navbar-inverse {
+    background-color: #87240f;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+    color: white !important;
+}
+div.container-fluid.body-content {
+    /*padding: 0px;
+    margin: 0px;*/
+    border-radius: 0px;
+}
+
+/*Home index jumbotron styling*/
+.attention-grabber {
+    padding: 50px 0px;
+    margin: 15px, 0px;
+    border: none;
+    border-radius: 0px;
+    background-image: url('Images/jumbotronimage.jpg');
+    background-size: 100% 100%;
+    text-align: center;
+    height: 300px;
+    color: white;
+}
+
+.attention-grabber h1 {
+    font-family: 'Cinzel', serif;
+    /*webkit styling for font outline:
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;*/
+}
+
+.attention-grabber h2 {
+    font-size: 50px;
+    font-family: 'Satisfy', cursive;
+}
+
+.attention-grabber h2 span {
+    color: red;
+}
+
+.jumbotron-text-background {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50px;
+}
+
+.item-creation {
+    height: 300px;
+    text-align: center;
+    background-size: 100% 100%;
+    padding: 30% 0px;
+}
+
+.item-creation-tops {
+    background-image: url('Images/tops-category.jpeg');
+}
+
+.item-creation-bottoms {
+    background-image: url('Images/bottoms-category.jpeg');
+}
+
+.item-creation-shoes {
+    background-image: url('Images/shoes-category.jpeg');
+}
+
+.item-creation-accessories {
+    background-image: url('Images/accessories-category.jpeg');
+}
+
+.item-text-background {
+    width: 75%;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50px;
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+}
+
+
+footer {
+    color: white;
+    text-align: center;
 }
