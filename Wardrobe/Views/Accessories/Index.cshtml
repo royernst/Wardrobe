@@ -4,9 +4,10 @@
     ViewBag.Title = "Accessories";
 }
 
-<h2 style="color:white">Accessories</h2>
-
-    @Html.ActionLink("Add a New Accessory", "Create", "Accessories", null, new { @class = "btn btn-default" })
+<h2 class="item-name-title">Accessories</h2>
+<div class="container-fluid creation-button">
+    @Html.ActionLink("Get Funky", "Create", "Accessories", null, new { @class = "btn btn-default" })
+</div>
 
 @*Basic thumbnail list format.  Look into categorization in future*@
 <div class="row">
@@ -15,7 +16,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="thumbnail item-thumbnail">
                 <div class="caption">
-                    <img src="@Html.DisplayFor(modelItem => item.AccessoryPhoto)" alt="Item Picture" class="item-thumbnail-picture"/>
+                    <img src="@Html.DisplayFor(modelItem => item.AccessoryPhoto)" alt="Item Picture" class="item-thumbnail-picture" />
                     <h3>@Html.DisplayFor(modelItem => item.AccessoryName)</h3>
                     <p>@Html.ActionLink("Details", "Details", new { id = item.AccessoryID }, new { @class = "btn btn-default", role = "button" })</p>
                 </div>

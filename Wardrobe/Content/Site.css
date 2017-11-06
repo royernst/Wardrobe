@@ -107,6 +107,10 @@ footer {
     padding: 30% 0px;
 }
 
+.creation-button {
+    text-align: center;
+}
+
 /* Thumbnail backgrounds */
 .item-creation-tops {
     background-image: url('Images/tops-category.jpeg');
@@ -137,13 +141,17 @@ footer {
 
 /* Item thumbnail properties on view Index page */
 .item-thumbnail {
-    color: black;
+    background-color: black;
+    color: white;
+    border: 5px double white;
+    border-radius: 8px;
     text-align: center;
     margin-top: 30px;
 }
 
 .item-thumbnail-picture {
     border-radius: 8px;
+    border: 2px solid #87240f;
     max-width: 100%;
     height: auto;
 }
@@ -160,9 +168,12 @@ footer {
 }
 
 .details-image {
-    background-color: white;
-    padding: 5px;
+    background-color: black;
+    padding: 10px;
+    border: 1px double white;
     border-radius: 8px;
+    width: 75%;
+    height: 75%;
 }
 
 .details-details {

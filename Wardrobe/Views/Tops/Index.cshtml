@@ -4,9 +4,10 @@
     ViewBag.Title = "Tops";
 }
 
-<h2 style="color:white">Tops</h2>
-
-@Html.ActionLink("Add a New Top", "Create", "Tops", null, new { @class = "btn btn-default" })
+<h2 class="item-name-title">Tops</h2>
+<div class="container-fluid creation-button">
+    @Html.ActionLink("Get Funky", "Create", "Tops", null, new { @class = "btn btn-default" })
+</div>
 
 @*Basic thumbnail list format.  Look into categorization in future*@
 <div class="row">
