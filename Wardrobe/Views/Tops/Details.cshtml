@@ -1,65 +1,26 @@
 ﻿@model Wardrobe.Models.Top
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.TopName;
 }
 
-<h2>Details</h2>
+<h1 class="item-name-title">@Model.TopName</h1>
 
-<div>
-    <h4>Top</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TopName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopPhoto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopPhoto)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopColor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopSeason)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopSeason)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TopOccasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TopOccasion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ClothingType.TypeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClothingType.TypeName)
-        </dd>
-
-    </dl>
+<div class="container details-image">
+    <img src="@Html.DisplayFor(model => model.TopPhoto)" alt="Item Image Not Loading.  Why'd you break it?" class="item-thumbnail-picture" />
 </div>
+<div class="row details-formatting">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Color: @Model.TopColor</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Occasion: @Model.TopOccasion</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Season: @Model.TopSeason</h2>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TopID }) |
     @Html.ActionLink("Back to List", "Index")

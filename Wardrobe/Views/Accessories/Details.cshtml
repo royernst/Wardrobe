@@ -1,65 +1,26 @@
 ﻿@model Wardrobe.Models.Accessory
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.AccessoryName;
 }
 
-<h2>Details</h2>
+<h1 class="item-name-title">@Model.AccessoryName</h1>
 
-<div>
-    <h4>Accessory</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessoryName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessoryPhoto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessoryPhoto)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessoryColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessoryColor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessorySeason)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessorySeason)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessoryOccasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessoryOccasion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ClothingType.TypeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClothingType.TypeName)
-        </dd>
-
-    </dl>
+<div class="container details-image">
+    <img src="@Html.DisplayFor(model => model.AccessoryPhoto)" alt="Item Image Not Loading.  Why'd you break it?" class="item-thumbnail-picture"/>
 </div>
+<div class="row details-formatting">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Color: @Model.AccessoryColor</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Occasion: @Model.AccessoryOccasion</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Season: @Model.AccessorySeason</h2>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AccessoryID }) |
     @Html.ActionLink("Back to List", "Index")

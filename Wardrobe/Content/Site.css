@@ -5,6 +5,13 @@
     background-size: cover;
 }
 
+a {
+    color: #87240f;
+}
+p {
+    text-align: center;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding: 0px 15px 15px 15px;
@@ -30,14 +37,16 @@ textarea {
     text-align: left;
     font-family: 'Cinzel', serif;
 }
+
 .navbar-inverse {
     background-color: #87240f;
 }
 
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav > li > a {
-    color: white !important;
-}
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-nav > li > a {
+        color: white !important;
+    }
+
 div.container-fluid.body-content {
     /*padding: 0px;
     margin: 0px;*/
@@ -64,22 +73,22 @@ footer {
     color: white;
 }
 
-/* Changing fonts for jumbotron headers */
-.attention-grabber h1 {
-    font-family: 'Cinzel', serif;
-    /*webkit styling for font outline:
+    /* Changing fonts for jumbotron headers */
+    .attention-grabber h1 {
+        font-family: 'Cinzel', serif;
+        /*webkit styling for font outline:
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;*/
-}
+    }
 
-.attention-grabber h2 {
-    font-size: 50px;
-    font-family: 'Satisfy', cursive;
-}
+    .attention-grabber h2 {
+        font-size: 50px;
+        font-family: 'Satisfy', cursive;
+    }
 
-.attention-grabber h2 span {
-    color: red;
-}
+        .attention-grabber h2 span {
+            color: red;
+        }
 
 /* Black box behind jumbotron text */
 .jumbotron-text-background {
@@ -137,4 +146,32 @@ footer {
     border-radius: 8px;
     max-width: 100%;
     height: auto;
+}
+
+/* DETAILS */
+/* Font formatting */
+.item-name-title {
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 75px;
+}
+
+.details-image {
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.details-details {
+    margin: 15px 0px;
+    padding: 0px;
+    border: 5px double white;
+    background-color: black;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: white;
+    line-height: 200px;
 }

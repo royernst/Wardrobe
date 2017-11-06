@@ -1,65 +1,26 @@
 ﻿@model Wardrobe.Models.Bottom
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.BottomName;
 }
 
-<h2>Details</h2>
+<h1 class="item-name-title">@Model.BottomName</h1>
 
-<div>
-    <h4>Bottom</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BottomName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BottomName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BottomPhoto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BottomPhoto)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BottomColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BottomColor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BottomSeason)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BottomSeason)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BottomOccasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BottomOccasion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ClothingType.TypeName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ClothingType.TypeName)
-        </dd>
-
-    </dl>
+<div class="container details-image">
+    <img src="@Html.DisplayFor(model => model.BottomPhoto)" alt="Item Image Not Loading.  Why'd you break it?" class="item-thumbnail-picture" />
 </div>
+<div class="row details-formatting">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Color: @Model.BottomColor</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Occasion: @Model.BottomOccasion</h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 details-details">
+        <h2>Season: @Model.BottomSeason</h2>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.BottomID }) |
     @Html.ActionLink("Back to List", "Index")
