@@ -126,4 +126,15 @@ footer {
     font-size: 30px;
 }
 
+/* Item thumbnail properties on view Index page */
+.item-thumbnail {
+    color: black;
+    text-align: center;
+    margin-top: 30px;
+}
 
+.item-thumbnail-picture {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}

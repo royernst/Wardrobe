@@ -176,11 +176,19 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\accessories-category.jpeg" />
+    <Content Include="Content\Images\blackjeans.jpeg" />
     <Content Include="Content\Images\bottoms-category.jpeg" />
+    <Content Include="Content\Images\converses.jpeg" />
     <Content Include="Content\Images\coolwatch.jpeg" />
+    <Content Include="Content\Images\dressshoes.jpg" />
+    <Content Include="Content\Images\hipsterslacks.jpeg" />
     <Content Include="Content\Images\jumbotronimage.jpg" />
     <Content Include="Content\Images\lamewatch.jpeg" />
+    <Content Include="Content\Images\legendarytee.jpeg" />
+    <Content Include="Content\Images\nikes.jpg" />
     <Content Include="Content\Images\shoes-category.jpeg" />
+    <Content Include="Content\Images\thechaplin.jpg" />
+    <Content Include="Content\Images\thehipster.jpeg" />
     <Content Include="Content\Images\tops-category.jpeg" />
     <Content Include="Content\Images\woodbg.jpg" />
     <Content Include="favicon.ico" />
@@ -247,11 +255,6 @@
     <Content Include="Views\Tops\Details.cshtml" />
     <Content Include="Views\Tops\Edit.cshtml" />
     <Content Include="Views\Tops\Index.cshtml" />
-    <Content Include="Views\Bottoms\Create.cshtml" />
-    <Content Include="Views\Bottoms\Delete.cshtml" />
-    <Content Include="Views\Bottoms\Details.cshtml" />
-    <Content Include="Views\Bottoms\Edit.cshtml" />
-    <Content Include="Views\Bottoms\Index.cshtml" />
     <Content Include="Views\Shoes\Create.cshtml" />
     <Content Include="Views\Shoes\Delete.cshtml" />
     <Content Include="Views\Shoes\Details.cshtml" />
@@ -267,6 +270,11 @@
     <Content Include="Views\Accessories\Details.cshtml" />
     <Content Include="Views\Accessories\Edit.cshtml" />
     <Content Include="Views\Accessories\Index.cshtml" />
+    <Content Include="Views\Bottoms\Create.cshtml" />
+    <Content Include="Views\Bottoms\Delete.cshtml" />
+    <Content Include="Views\Bottoms\Details.cshtml" />
+    <Content Include="Views\Bottoms\Edit.cshtml" />
+    <Content Include="Views\Bottoms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,11 +13,11 @@
     @foreach (var item in Model)
     {
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <div class="thumbnailb">
+            <div class="thumbnail item-thumbnail">
                 <div class="caption">
-                    <img src="@Html.DisplayFor(modelItem => item.AccessoryPhoto)"/>
+                    <img src="@Html.DisplayFor(modelItem => item.AccessoryPhoto)" alt="Item Picture" class="item-thumbnail-picture"/>
                     <h3>@Html.DisplayFor(modelItem => item.AccessoryName)</h3>
-                    <p>@Html.ActionLink("Details", "Details", new { id = item.AccessoryID }, new { @class = "btn btn-primary", role = "button" })</p>
+                    <p>@Html.ActionLink("Details", "Details", new { id = item.AccessoryID }, new { @class = "btn btn-default", role = "button" })</p>
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ namespace Wardrobe.Controllers
         // GET: Bottoms/Create
         public ActionResult Create()
         {
-            ViewBag.TypeID = new SelectList(db.ClothingTypes, "Type of Clothing", "TypeName");
+            ViewBag.TypeID = new SelectList(db.ClothingTypes, "TypeID", "TypeName");
             return View();
         }
 

@@ -1,63 +1,25 @@
 ﻿@model IEnumerable<Wardrobe.Models.Top>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tops";
 }
 
-<h2>Index</h2>
+<h2 style="color:white">Tops</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TopName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopSeason)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TopOccasion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClothingType.TypeName)
-        </th>
-        <th></th>
-    </tr>
+@Html.ActionLink("Add a New Top", "Create", "Tops", null, new { @class = "btn btn-default" })
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopColor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopSeason)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TopOccasion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClothingType.TypeName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TopID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TopID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TopID })
-        </td>
-    </tr>
-}
-
-</table>
+@*Basic thumbnail list format.  Look into categorization in future*@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="thumbnail item-thumbnail">
+                <div class="caption">
+                    <img src="@Html.DisplayFor(modelItem => item.TopPhoto)" alt="Item Picture" class="item-thumbnail-picture" />
+                    <h3>@Html.DisplayFor(modelItem => item.TopName)</h3>
+                    <p>@Html.ActionLink("Details", "Details", new { id = item.TopID }, new { @class = "btn btn-default", role = "button" })</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
